@@ -9,11 +9,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 
-st.set_page_config(page_title="Breast Cancer Predictor", layout="centered")
-
 
 
 # Logistic Regression Model Traning
+
 def train_model():
     data = sklearn.datasets.load_breast_cancer()
     X = pd.DataFrame(data.data, columns=data.feature_names)
@@ -41,6 +40,8 @@ model, scaler, feature_names, train_acc, test_acc = train_model()
 
 
 # Web app implementation (Streamlit)
+
+st.set_page_config(page_title="Breast Cancer Predictor", layout="centered")
 st.title("🩺 Breast Cancer Prediction from Features")
 st.markdown("""
 Provide input features to predict if a tumor is 'Benign' or 'Malignant'.
